@@ -1,0 +1,713 @@
+
+.container{
+	max-width:1300px;
+	width:100%;
+	margin:auto;
+}
+
+
+body{
+	position:relative;
+	background:#eee;
+}
+
+
+.navigation .navbar-expand-sm{
+	background-color:#333545;
+}
+
+.navigation .form-inline .form-control{
+	width:45%;
+	margin:10px 0;
+	border-radius:0;
+	letter-spacing:-1px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	width:500px;
+}
+.navigation .form-inline .btn-success{
+	background:#181a1b;
+	border:0;
+	border-radius:0;
+	position:relative;
+}
+
+.logo2{
+	position:absolute;
+	left:680px;
+	bottom:70px;
+}
+
+.logo h4{
+	margin:0;
+	color:#fff;
+	font-size:17px;
+	margin:0 10px;
+}
+
+
+.menus .dropbtn {  
+  font-size: 16px;
+  border: none;
+  border-radius:5px;
+  margin:0px;
+  line-height:5px;
+  text-align:center; 
+color:white;
+  
+}
+
+
+.dropdown a:hover{
+	text-decoration:none;
+	color:red!important;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  
+}
+
+.dropbtn {
+  background:transparent;	
+  color: #fff;
+ 
+  font-size: 16px;
+  border: none;
+  height:0;
+  margin:16px 0 ;
+  line-height:1px;
+  text-align:center;
+  	
+}
+
+.more .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.more .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.more .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  
+}
+
+.more .dropbtn i {
+  line-height:0;
+}
+
+.more .dropbtn:hover i {
+                transform: rotatex(180deg);
+				transition: 0;
+            }
+.more .dropdown-content a:hover {background-color:none;}
+
+.more .dropdown:hover .dropdown-content {display: block;}
+
+.more .dropdown:hover .dropbtn {background-color:none;}
+
+
+
+.foot{
+	background:#333338;
+}
+
+.font{
+	font-size:15px;
+}
+
+.font1{
+	font-size:13px;
+	color:#fff;
+}
+.font2{
+	font-size:11px;
+	list-style:none;
+	color:#;
+}
+
+.back{
+	background:#333338;
+}
+.style{
+	list-style:none;
+}
+.style li{
+	font-size:13px;
+	padding:2px 0;
+}
+
+
+
+
+.menus{
+	background:#1f2533;
+	height:50px;
+}
+
+.list{
+	margin-top:120px;
+}
+.baba{
+	position:relative;
+}
+.numbering{
+	position:absolute;
+	right:-1px;
+	top:8px;
+	background:white;
+	border-radius:100%;
+	font-size:30px;
+	padding:2px 10px;
+	line-height:1;
+}
+
+
+
+
+
+.dropbox{
+    padding: 18px 12px;
+	padding-left:20px;
+	position:relative;
+	cursor:pointer;
+}
+
+.red{
+	color:#dc354b;
+	font-weight:500;
+	border:1px solid grey;
+}
+
+#regis btn :focus{
+	background:red;
+	color:white;
+}
+.dropbox h6:hover{
+	color:red;
+}
+
+#regis ul li{
+	list-style:number;
+}
+
+
+#language, #categories, #Filters{
+	display:none;
+}
+
+
+
+
+.detail{
+	margin-top:89px;
+	height:500px;
+	background-size:cover;
+	background-position:center;
+	position:relative;
+	-webkit-filter: blur(10px) ;
+    filter:blur(10px);
+}
+.detail1{
+	position: absolute;
+    top: 149px;
+    left: 118px;
+}
+.detailing{
+	z-index:99;
+	
+	
+}
+
+.release{
+	border:1px solid white;
+	border-radius:10px;
+	
+}
+
+
+.imagesize{
+	width: 100%;
+    height: 299px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+.imagesize img{
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+}
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  
+}
+.events{
+	width:600px;
+	margin-top:10px;
+}
+
+.art{
+	margin-top:89px;
+	background:#1a1a1a;
+	height:445px;
+}
+.home{
+	margin-top:84px;
+	margin-left:-2px;
+	
+}
+
+.artimg{
+	position:relative;
+}
+.artimg2{
+	position:absolute;
+	top:94px;
+}
+.artimg3{
+	position:absolute;
+	top:140px;
+	margin-left:-40px;
+}
+
+
+.show{
+	height:500px:
+}
+
+.Premiere{
+	background-color:#2b3149;
+}
+.home, .Movies, .best, .Premiere, .Near, .Online{
+	position:relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.home1 .owl-nav .owl-prev span{
+	font-size: 60px;
+	font-weight:100;
+	color:white;
+	position: absolute;
+    top: 120px;
+	background:#00000070;
+	line-height: normal;
+    padding-bottom: 20px;
+    padding-right: 13px;
+    padding-left: 6px;
+    border-radius: 15px;
+    margin-left: -3px;
+}
+.movies1 .owl-nav .owl-prev span{
+	font-size: 30px;
+    font-weight: 100;
+    position: absolute;
+    line-height: normal;
+    padding-bottom: 10px;
+    padding-right: 21px;
+    padding-left: 19px;
+    border-radius: 26px;
+    margin-left: -18px;
+	top:156px;
+	background: #0000004d;
+	color:#fff;
+}
+.best1 .owl-nav .owl-prev span{
+	font-size: 30px;
+    font-weight: 100;
+    color: white;
+    position: absolute;
+    top: 96px;
+    background: #0000004d;
+    line-height: normal;
+    padding-bottom: 11px;
+    padding-right: 21px;
+    padding-left: 19px;
+    border-radius: 26px;
+    margin-left: -18px;
+}
+.Premiere1 .owl-nav .owl-prev span{
+	font-size: 30px;
+    font-weight: 100;
+    position: absolute;
+    line-height: normal;
+    padding-bottom: 10px;
+    padding-right: 21px;
+    padding-left: 19px;
+    border-radius: 26px;
+    margin-left: -18px;
+	top:166px;
+	background: #ffffff4d;
+	color:black;
+}
+.Near .owl-nav .owl-prev span{
+	font-size: 30px;
+    font-weight: 100;
+    position: absolute;
+    line-height: normal;
+    padding-bottom: 10px;
+    padding-right: 21px;
+    padding-left: 19px;
+    border-radius: 26px;
+    margin-left: -18px;
+	top:166px;
+	background: #0000004d;
+	color:#fff;
+}
+.Online .owl-nav .owl-prev span{
+	font-size: 30px;
+    font-weight: 100;
+    position: absolute;
+    line-height: normal;
+    padding-bottom: 10px;
+    padding-right: 21px;
+    padding-left: 19px;
+    border-radius: 26px;
+    margin-left: -18px;
+	top:166px;
+	background: #0000004d;
+	color:#fff;
+}
+
+
+.home1 .owl-nav .owl-next span{
+	font-size: 60px;
+	font-weight:100;
+	color:white;
+	position: absolute;
+    top: 120px;
+	right:0;
+	background:#00000070;
+	line-height: normal;
+    padding-bottom: 19px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 15px;
+    margin-right:px;
+}
+.movies1 .owl-nav .owl-next span{
+	font-size: 30px;
+    font-weight: 100;
+    position: absolute;
+	right:0;
+    line-height: normal;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 21px;
+    border-radius: 45px;
+    margin-right: -18px;
+	top:156px;
+	background: #0000004d;
+	color:#fff;
+}
+.best1 .owl-nav .owl-next span{
+	font-size: 30px;
+    font-weight: 100;
+    color: white;
+    position: absolute;
+    top: 96px;
+    right: 0;
+    background: #0000004d;
+    line-height: normal;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 21px;
+    border-radius: 45px;
+    margin-right: -17px;
+}
+.Premiere1 .owl-nav .owl-next span{
+	font-size: 30px;
+    font-weight: 100;
+    position: absolute;
+	right:0;
+    line-height: normal;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 21px;
+    border-radius: 45px;
+    margin-right: -18px;
+	top:166px;
+	background: #ffffff4d;
+	color:black;
+}
+
+.Near .owl-nav .owl-next span{
+	font-size: 30px;
+    font-weight: 100;
+    position: absolute;
+	right:0;
+    line-height: normal;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 21px;
+    border-radius: 45px;
+    margin-right: -18px;
+	top:166px;
+	background: #0000004d;
+	color:#fff;
+}
+.Online .owl-nav .owl-next span{
+	font-size: 30px;
+    font-weight: 100;
+    position: absolute;
+	right:0;
+    line-height: normal;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 21px;
+    border-radius: 45px;
+    margin-right: -18px;
+	top:166px;
+	background: #0000004d;
+	color:#fff;
+}
+
+#loginform2, #second2{
+	display:none;
+}
+.login{
+	position:relative;
+}
+.login2{
+	position:fixed;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	margin:auto;
+	max-width:400px;
+	width:100%;
+	height:500px;
+	z-index:99;  
+	background:#fff;
+	padding:20px;
+	border-radius:20px;
+}
+.second3{
+	position:fixed;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	margin:auto;
+	max-width:400px;
+	width:100%;
+	height:500px;
+	z-index:99;  
+	padding:20px;
+	border-radius:20px;
+	background:#fff;
+}
+.cross{
+	position:absolute;
+	top:-15px;
+	right:-30px;
+	font-size:35px;
+	color:#fff;
+	z-index:99;  
+}
+.side{
+	width:300px;
+}
+.para{
+	font-size:12px;
+}
+
+.section-one_seats table{
+	width:100%;
+}
+.main-div_seats{
+	width:1286px;
+	margin:auto;
+}
+.abcd_seats{
+	margin:6px 9px;
+	font-size:13px;
+	color:red;
+	text-transform:capitalise;
+}
+.seatsnum{
+	float:left;
+	width:35px;
+	height:35px;
+	margin:10px;
+}
+.seatsnum button{
+	display:inline-block;
+	font-size:14px;
+	line-height:20px;
+	font-weight:500;
+	background:#fff;
+	vertical-align:top;
+	border:1px solid #000;
+	border-radius:5px;
+	text-align:center;
+	width:41px;
+	height:42px;
+	color:red;
+	text-decoration:none;	
+}
+.seatsnum button:hover{
+	background:red;
+	color:#000;
+	
+}
+
+
+.dis{
+	background-color:yellow!important;
+	cursor:no-drop;
+}
+.seatsclick.fix{
+	background:green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  line-height:2.2px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+
+
+
+
+
