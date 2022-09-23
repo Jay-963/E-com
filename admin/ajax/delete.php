@@ -1,9 +1,9 @@
 <?php
-	include '../config/conn.php';
+	include '../config/connection.php';
 	
-	$id = $_POST['event_id'];
+	$id = $_POST['id'];
 	
-	$sql = "DELETE FROM `event_table` WHERE event_id = '".$id."'";
+	$sql = "delete from flipkart where id = '".$id."'";
 	
 	$query = mysqli_query($conn, $sql);
 	

@@ -1,19 +1,13 @@
 <?php 
-	include 'admin/config/conn.php';
-	
+	include 'admin/config/connection.php';
 	session_start();
-
-	if(!isset($_SESSION['token']) && $_SESSION['token'] == null){
-		header("Location: home.php");
-	}
 	
-	$id = $_SESSION['token'];
-	$joint = "select event_table.list_image, event_table.event_name, event_table.create_date, booking_table.book_id, booking_table.no_of_seats, booking_table.total_price, booking_table.seats_name
-	FROM booking_table
-	INNER JOIN event_table ON booking_table.event_id=event_table.event_id
-	where booking_table.user_id = '".$id."' ";
-	// print_r($joint);
-	$orderrun = mysqli_query($conn, $joint);
+	$catid = $_GET['oid'];
+	$getpsql3 = "select * from flipkart where id = '".$catid."'";
+	$prodquery3 = mysqli_query($conn, $getpsql3);
+	$prodquery4 = mysqli_fetch_array($prodquery3);
+	
+
 		
 	
 ?>	
@@ -21,7 +15,7 @@
 	<!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>BookMyShow</title>
+		<title>Flipkart Copy</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/all.min.css" /> 
@@ -31,63 +25,69 @@
 	</head>
 	<body class="">
 		<?php include 'include/nav.php';?>
-		<div class="container home">
-			
-			<div class="top border p-4 shadow mt-5 ">
+		<div class="container">
+			<div class="top border p-3 shadow mt-5 pt-4">
 				<div class="border border mb-3">
 					<div class="d-flex justify-content-between p-3 border border-top-0 border-left-0 border-right-0">
-						<div class="p-2 px-4 bg-primary text-light rounded-lg m-auto">My Tickets</div>
+						<div class="p-2 px-4 bg-primary text-light">Shopping cart</div>
+						<div class="p-2 px-4 border"><i class="fas fa-map-marker-alt pr-3"></i>Track</div>
 					</div>
-					
-					<div class="row m-3">
-					<?php
-						while($product = mysqli_fetch_array($orderrun)){
-					?>
-						<div class="col-9 my-2 p-0">
-							<div class="bg-dark p-4">
-								<div class="row p-2">
-									<div class="col-1">
-										<img  src="admin/img/limg/<?php echo $product['list_image']; ?>" width="50px" >
+					<div class="">
+						<div class="d-flex m-2">
+							<div class="p-2 flex-fill">
+								 <div class="d-flex mb-3">
+									<div class="p-2 ">
+										<img  src="admin/images/limg/<?php echo $prodquery4['list_image']; ?>" width="50px" >
 									</div>
-									<div class="col-4">
-										<h5 class="text-light"><?php echo $product['event_name'] ?></h5>
+									<div class="p-3 flex-grow-1 ">
+										<h5 class="pt-3"><?php echo $prodquery4['name'] ?></h5>
 									</div>
 								</div>
-								<h6 class="text-light py-3">Ticket No: <?php echo $product['book_id'] ?></h6>
-								<div class="row text-light border border-warning m-0">
-									<div class="col-4 text-center"><h5>Date On</h5></div>
-									<div class="col-4 text-center"><h5>Your Seats</h5></div>
-									<div class="col-4 text-center"><h5>Ticket Price</h5></div>
-								</div>
-								<div class="row text-light border border-warning m-0 border-top-0">
-									<div class="col-4 text-center"><h5><?php echo $product['create_date'] ?></h5></div>
-									<div class="col-4 text-center"><h5><?php echo $product['seats_name'] ?></h5></div>
-									<div class="col-4 text-center"><h5>₹<?php echo $product['total_price'] ?></h5></div>
+							</div>
+							<div class="p-2  flex-fill">
+								<div class="d-flex mb-3">
+									<div class="p-2 flex-fill">
+										<h5 class="text-center">Price</h5>
+										<h5 type="text" id="Price" data-value="<?php echo $prodquery4['price'] ?>" class=" my-1 form-control border text-center box py-2" >₹<?php echo $prodquery4['price'] ?></h5>
+									</div>
+									<div class="mt-5 plus-minus-input flex-fill">
+										<div class="d-flex">
+											<div class="input-group-button">
+												<button type="button" class="button hollow circle" data-quantity="minus" data-field="quantity">
+												  <i class="fa fa-minus" aria-hidden="true"></i>
+												</button>
+											</div>
+											  <input id="quantityfield" class="input-group-field" type="number" name="quantity" value="1">
+											<div class="input-group-button">
+												<button type="button" class="button hollow circle" data-quantity="plus" data-field	="quantity">
+													<i class="fa fa-plus" aria-hidden="true"></i>
+												</button>
+											</div>
+										</div>
+									</div>
+									<div class="p-2 flex-fill">
+										<h5 class="text-center">Total price</h5>
+										<input type="text" id="Total" class=" my-1 form-control border text-center box py-2" ></input>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-3 my-2 p-0">
-							<div class="bg-warning p-4">
-								<div class="row p-2">
-									<div class="col-3">
-										<img  src="admin/img/limg/<?php echo $product['list_image']; ?>" width="50px" >
-									</div>
-									<div class="col-8">
-										<h5 class="text-light"><?php echo $product['event_name'] ?></h5>
-									</div>
-								</div>
-								<div class="text-center text-light">
-									<img src="img/bar.jpg" width="94px" >
-									<h5>Scan Me</h5>
-								</div>
-								
-							</div>
+					</div>
+					<div class="d-flex justify-content-between p-1 border border-bottom-0 border-left-0 border-right-0">
+						<div class="p-1 px-4 ">
+							<input type="text" id="address" class=" my-1 form-control border text-center box py-2" placeholder="Place Address" ></input>
 						</div>
-						
-						<div class="baba"><h5 class="numbering"><?php echo $product['no_of_seats'] ?></h5></div>
-						<?php
-						}
-					?>
+						<div>
+							<?php if(isset($_SESSION['lock'])){?>
+								<button class="p-1 m-3 px-3 bg-success text-light rounded-lg" type="button" id="buy" onclick="myFunction()" >Buy Now</button>
+								<button class="btn btn-primary" style="display:none;" id="spin">
+									<span class="spinner-border spinner-border-sm" ></span>
+									Loading..
+								</button>
+							<?php }else{?>
+								<div class="py-2 m-2 px-4 bg-success text-light rounded-lg" type="button" id="loginfirst" >Buy Now</div>
+							<?php }?>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -95,8 +95,111 @@
 		<?php include 'include/bottom.php';?>
 		<?php include 'include/js.php';?>
 		
-		 <script>
+		<script>
+			$(document).ready(function(){
+				var price = '<?php echo $prodquery4['price'] ?>';			
+				var totalprice = $("#Total").val(price);
+				
+				$("#buy").click(function(){
+					$("#spin").show();
+					$("#buy").hide();
+					var buy = $("#address").val();
+					var totprice = $("#Total").val();
+					var prodquan = $("#quantityfield").val();
+					var prodId = '<?php echo $prodquery4["id"] ?>';
+					var userid = "<?php echo isset($_SESSION['lock']) ? $_SESSION['lock'] : ""; ?>";
+					console.log(userid);
+					var fd = new FormData();
+					
+					fd.append("c_Address", buy);
+					fd.append("c_price", totprice);
+					fd.append("c_prodid", prodId);
+					fd.append("c_userid", userid);
+					fd.append("c_prodquan", prodquan);
+					
+					
+						if(buy	== ""){
+						alert("Enter Your Address");	
+					}
+						
+					$.ajax({
+						url:"ajax/buy.php",
+						type:"POST",
+						data:fd,
+						processData:false,
+						contentType:false,
+						success:function(resp){
+							//console.log(resp);
+							if(resp == 1){
+								$("#spin").hide();
+								$("#buy").show();
+					
+								swal("Good job!", "your order is placed!", "success");
+								$("#address").val("");
+								$("#Total").val("");
+							}
+							}	
+					})
+				
+				});
+			});
+			
+				function quantityfunc(currentvalue){
+					var quantity = currentvalue;
+					var price = '<?php echo $prodquery4['price'] ?>';
+					var total = (quantity * price);
+					var totalprice = $("#Total").val(total);
+					
+					
+				}
+				
 		
+		
+		
+	
+	
+	jQuery(document).ready(function(){
+				
+	
+	// This button will increment the value
+    $('[data-quantity="plus"]').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('data-field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If is not undefined
+        if (!isNaN(currentVal)) {
+            // Increment
+            $('input[name='+fieldName+']').val(currentVal + 1);
+			quantityfunc(currentVal + 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name='+fieldName+']').val(0);
+        }
+    });
+    // This button will decrement the value till 0
+    $('[data-quantity="minus"]').click(function(e) {
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('data-field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If it isn't undefined or its greater than 0
+        if (!isNaN(currentVal) && currentVal > 0) {
+            // Decrement one
+            $('input[name='+fieldName+']').val(currentVal - 1);
+			quantityfunc(currentVal - 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name='+fieldName+']').val(0);
+        }
+    });
+});
+
+
 		</script>
 		
 		

@@ -1,5 +1,41 @@
 
 
+.mycontainer{
+	max-width:1350px;
+	width:100%;
+	margin:auto;
+}
+
+.back{
+	margin-top:0px;
+	
+}
+.imgpart{
+	position:sticky;
+}
+
+.Offers{
+	list-style:none;
+}
+.Offers li{
+	padding:5px 0;
+}
+
+.box{
+	width:60px;
+}
+
+#default{
+  text-align:center;
+}
+
+
+
+.xzoom img{
+	margin-left:10px;
+}
+
+
 							
 
 

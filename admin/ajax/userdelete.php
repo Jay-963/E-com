@@ -1,9 +1,9 @@
 <?php
-	include '../config/conn.php';
+	include '../config/connection.php';
 	
-	$id = $_POST['user_id'];
+	$id = $_POST['id'];
 	
-	$sql = "DELETE FROM `user_table` WHERE user_id = '".$id."'";
+	$sql = "delete from usertable where id = '".$id."'";
 	
 	$query = mysqli_query($conn, $sql);
 	

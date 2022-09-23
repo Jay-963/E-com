@@ -1,13 +1,10 @@
 <?php 
-	include 'admin/config/conn.php';
-	
+	include 'admin/config/connection.php';
 	session_start();
 
-	if(!isset($_SESSION['token']) && $_SESSION['token'] == null){
-		header("Location: home.php");
+	if(!isset($_SESSION['lock']) && $_SESSION['lock'] == null){
+		header("Location: index.php");
 	}
-	
-	
 ?>	
 		
 	<!DOCTYPE html>
@@ -23,17 +20,17 @@
 	</head>
 	<body>
 		<?php include 'include/nav.php';?>
-		<div class="container home">	
-				<div class="d-flex ">
-					<div class="mt-3">
+		<div class="container">
+			<div class="top">	
+				<div class="d-flex">
+					<div class="">
 						<div class="side">
 							<div class="border border-light bg-light  mb-2 p-3 shadow">
 								<a>Hello,</a>
-								<img class="rounded-circle me-lg-2" src="admin/img/limg/<?php echo $userinfo['image']?>"style="width: 40px; height: 40px;">
 								<h5><?php echo $userinfo['name']?></h5>
 							</div>
 							<div class="border border-light bg-light p-3 shadow">
-								<a><dt><span class="text-primary pr-3"><i class="fas fa-sort-alpha-down"></i></span>MY BOOKINGS</dt></a>
+								<a><dt><span class="text-primary pr-3"><i class="fas fa-sort-alpha-down"></i></span>MY ORDERS</dt></a>
 							</div>
 							<div class="border border-right-0 border-left-0 border-bottom-0 bg-light p-3 shadow">
 								<a><dt><span class="text-primary pr-3"><i class="fas fa-user-alt"></i></span>ACCOUNTS SETTINGS</dt></a>
@@ -76,7 +73,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="flex-grow-1 mt-3">
+					<div class="flex-grow-1">
 						<div class="border border-light bg-light mx-3 p-2 shadow">
 							<h5 class="p-3">Personal Information</h5>
 							<div class="d-flex flex-row ">
@@ -123,6 +120,8 @@
 						</div>
 					</div>					
 				</div>
+				
+			</div>
 		</div>	
 		<?php include 'include/bottom.php';?>
 		

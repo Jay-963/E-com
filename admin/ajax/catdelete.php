@@ -1,9 +1,9 @@
 <?php
-	include '../config/conn.php';
+	include '../config/connection.php';
 	
-	$id = $_POST['cat_id'];
+	$id = $_POST['id'];
 	
-	$sql = "DELETE FROM `cat_table` WHERE cat_id = '".$id."'";
+	$sql = "delete from catable where id = '".$id."'";
 	
 	$query = mysqli_query($conn, $sql);
 	

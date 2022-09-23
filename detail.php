@@ -1,27 +1,16 @@
 <?php 
-	include 'admin/config/conn.php';	
+	include 'admin/config/connection.php';
 	
 	session_start();
-
 	
-	
-	$eveid = $_GET['eid'];
-	$sql = "select * from event_table where event_id = '".$eveid."'";
-	$query = mysqli_query($conn, $sql);
-	$fetch = mysqli_fetch_array($query);
-	
-	
-	$artId = $fetch['art_id'];
-	$art = "select * from artists where art_id in (".$artId.")";
-	$query2 = mysqli_query($conn, $art);
-	
-	//$art = "SELECT event_table.art_id, image, name, nick_name, profile, born, address FROM artists LEFT JOIN event_table ON artists.art_id = event_table.art_id where artists.art_id IN (event_table.art_id) AND event_id = '".$eveid."' ";
-	
-	
+	$catid = $_GET['pid'];
+	$getpsql3 = "select * from flipkart where id = '".$catid."'";
+	$prodquery3 = mysqli_query($conn, $getpsql3);
+	$prodquery4 = mysqli_fetch_array($prodquery3);
 	
 	
 ?>	
-
+		
 	<!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -32,93 +21,84 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/detail.css">
 	</head>
 	<body>
 		<?php include 'include/nav.php';?>
-		<section class="detail" style="background-image:url('admin/img/dimg/<?php echo $fetch['detail_image']?>')">
-		</section>
-		<section class="detail1">	
-			<div class="container">
-				<div class="detailing">
-					<div class="row">
-						<div class="col-4 ">
-							<img class="" src="admin/img/limg/<?php echo $fetch['list_image']?>" width="250px"/>
+		<div class="container">
+			<div class="back bg-light border p-2">
+				<div class="row">
+					<div class="col-4 ">
+						<div class="w3-content" style="max-width:1200px">
+							 <img  src="admin/images/limg/<?php echo $prodquery4['list_image']; ?>" width="350px" >
+							 <div class="d-flex mt-3">
+								<div class="p-2 flex-fill">
+									<button type="button" class="btn bg-danger btn-lg btn-block text-light">Add To Cart</button>
+								</div>
+								<div class="p-2  flex-fill">
+									<a href="order.php?oid=<?php echo $prodquery4['id']; ?>" class="text-decoration-none">	
+										<button type="button" class="btn bg-warning btn-lg btn-block text-light">Order Now</button>
+									</a>
+								</div>
+							</div>
 						</div>
-						<div class="col-8 ">
-							<div class="text-light px-3">
-								<h2 class="my-3"><dt><?php echo $fetch['event_name']; ?></dt></h2>
-								<h5 class="my-3"><dt><i class="fas fa-thumbs-up text-success"></i> 278.1K <span>are interested</span></dt></h5>
-								<div class="release p-2 my-3">
-									<div class="row">
-										<div class="col-9">
-											<h6 class=""><?php echo $fetch['date_on']; ?></h6>
-											<p class="m-0">Mark interested to know when bookings open</p>
-										</div>
-										<div class="col-3 ">
-											<button class="rounded-sm border-0">I'm intrested</button>
-										</div>
-									</div>
+					</div>	
+					<div class="col-8">
+						<div class="detailpart">
+							<p>Home > Audio & Video > Headphones > OnePlus Headphones > OnePlus Bullets</p>
+							<h2><?php echo $prodquery4['name'] ?></h2>
+							<div class="d-flex flex-row my-3 ">
+								  <div class="pr-2"><button type="button" class="btn btn-success btn-sm">4.2<i class="fas fa-star"></i></button></div>
+								  <div class="px-2">5,18,058 Ratings & 45,224 Reviews</div>
+								  <div class="px-2"><a href="#"><img src="img/flo.png" width="75px"/></a></div>
+							</div>
+							<div class="d-flex flex-row ">
+								  <div class="pt-1"><h2 class="m-0"><i class="fas fa-rupee-sign"></i><?php echo $prodquery4['price'] ?></h2></div>
+								  <div class="p-2 text-success">8% off</div>
+							</div>
+							<div class=" text-danger">Hurry, Only 3 Left</div>
+						</div>
+						<div class="p-2">
+							<p>Features</p>
+							<p class=" pl-0"><?php echo $prodquery4['features'] ?></p>
+						</div>
+						<div class="mt-3 ">
+							<div class="row">
+								<div class="col-1">
+									<p>Description</p>
 								</div>
-								<div class="my-3">
-									<a class="bg-light text-dark p-1 rounded-sm">2D, 3D, 4DX 3D, 3D SCREEN X, IMAX 3D</a>
+								<div class="col-10 pl-3">
+									<p><?php echo $prodquery4['description'] ?></p>
 								</div>
-								<div class="my-2">
-									<a class="bg-light text-dark p-1 rounded-sm">English, Tamil, Telugu, Hindi</a>
-								</div>
-								<div class="my-2">
-									<h5>1h 59m • Action, Adventure, Fantasy • UA</h5>
-								</div>
-								<div class="mt-5">
-								
-								
-									<a href="sitting.php?eve=<?php echo $fetch['event_id']; ?>" class=" btn-danger text-decoration-none btn-lg mt-5">Book tickets</a>
-								
-								</div>
-								
 							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-		<section class="container">
-			<div class="mt-4">
-				<h4><dt>About the Event</dt></h4>
-				<h5><?php echo $fetch['description'];?></h5>
-				<h5><?php echo $fetch['features'];?></h5>
-			</div>
-			<div class="border border-dark border-right-0 border-left-0 border-bottom-0 my-5">
-				<div class="mt-5 mb-4">
-					<h4>Cast</h4>
-				</div>
-				<div class="row">
-				<?php 
-					while($row = mysqli_fetch_array($query2)){
-				?>
-						<div class="col-2 text-center">
-							<a href="artist.php?aid=<?php echo $row['art_id']; ?>" class="text-decoration-none text-dark">
-								<img class="rounded-circle" src="admin/img/artimg/<?php echo $row['image']?>" height="100px" width="100px"/>
-								<h5 class="mb-0"><?php echo $row['name']?></h5>
-								<p><?php echo $row['nick_name']?></p>
-							</a>
-						</div>
-				<?php
-					}
-				?>	
-				</div>
-				
-			</div>
-		</section>
+				</div>		
+			</div>	
+		</div>		
+		<?php include 'include/bottom.php';?>
 		
-		
-		
-		<?php include 'include/bottom.php';?>	
 		<?php include 'include/js.php';?>
 		<script>
-			$(document).ready(function(){
-				$("#remo").click(function(){
-					$("#regis").toggle();
-				});
-			});
+			function currentDiv(n) {
+				showDivs(slideIndex = n);
+			}
+
+			function showDivs(n) {
+			  var i;
+			  var x = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("demo");
+			  if (n > x.length) {slideIndex = 1}
+			  if (n < 1) {slideIndex = x.length}
+			  for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			  }
+			  for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+			  }
+			  x[slideIndex-1].style.display = "block";
+			  dots[slideIndex-1].className += " w3-opacity-off";
+			}
 		</script>
 		
 		

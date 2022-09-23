@@ -1,21 +1,16 @@
 <?php  
-	include '../config/conn.php';
+	include '../config/connection.php';
 
-	$uid = $_POST['t_uid'];
-	$Name = $_POST['t_Name'];
-	$Email = $_POST['t_Email'];
-	$Mobile = $_POST['t_Mobile'];
-	$Address = $_POST['t_Address'];
-	$Password = $_POST['t_Password'];
-	$image = $_FILES['t_image'];
-	$img = $_POST['t_img'];
+	$uid = $_POST['c_uid'];
+	$Name = $_POST['c_Name'];
+	$Email = $_POST['c_Email'];
+	$Mobile = $_POST['c_Mobile'];
+	$Address = $_POST['c_Address'];
+	$Password = $_POST['c_Password'];
 	
-	$temp = $image['tmp_name'];
 	
-	move_uploaded_file($temp, '../img/limg/'.$img);
 		
-		
-	$sql = "update user_table set name='".$Name."', email='".$Email."', mobile='".$Mobile."', address='".$Address."', `image`='".$img."', password='".$Password."' where user_id = '".$uid."' ";
+	$sql = "update usertable set name='".$Name."', email='".$Email."', mobile='".$Mobile."', address='".$Address."', password='".$Password."' where id = '".$uid."' ";
 	
 	$query = mysqli_query($conn, $sql);
 	

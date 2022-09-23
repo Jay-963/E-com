@@ -1,3 +1,16 @@
 
 
 
+body{
+	background:#f1f3f6;
+}
+
+.top{
+	margin-top:80px;
+}
+.side{
+	width:300px;
+}
+.para{
+	font-size:12px;
+}

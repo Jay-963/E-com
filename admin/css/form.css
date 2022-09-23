@@ -1,0 +1,16 @@
+
+
+
+.preimage{
+	width:150px;
+	height:150px;
+	cursor:pointer;
+	overflow:hidden;
+}
+.preimage img{
+	width:100%;
+	overflow:hidden;
+}
+
+
+
